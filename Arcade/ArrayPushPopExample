@@ -1,0 +1,4 @@
+var fruits = ["apple", "banana", "cherry"]
+Push(fruits, "date") // ["apple", "pear", "cherry", "date"]
+var lastFruit = Pop(fruits) // "date"
+return `Pop Returned the last item Push added: ${lastFruit}\nAnd it removed it: ${fruits}`
