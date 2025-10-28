@@ -1,0 +1,7 @@
+var people = ["Ada", "Alan", "Chad", "Bob", "Eve"]
+
+// Remove item at index 2 ("Chad")
+var indexToRemove = IndexOf(people, "Chad")
+var sliced = Slice(people, 0, indexToRemove) // ["Ada", "Alan"]
+
+return sliced + `\npeople left untouched: ${people}`
