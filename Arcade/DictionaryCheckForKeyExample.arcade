@@ -1,0 +1,13 @@
+var person = {
+  "name": "Jane Dough",
+  "city": "Knoxville"
+}
+
+// Check if the "age" key exists
+if (!HasKey(person, "age")) {
+  // If not, add it
+  person["age"] = 36
+}
+
+// Now "age" exists in the dictionary
+return person

@@ -1,0 +1,3 @@
+var theDate = Now()
+var formatted = Text(theDate, "MMMM D, Y")
+return formatted

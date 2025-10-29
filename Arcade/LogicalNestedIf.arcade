@@ -1,0 +1,10 @@
+var age = 40
+if (age > 18) {
+  if (age < 65) {
+    return "Adult"
+  } else {
+    return "Senior"
+  }
+} else {
+  return "Child"
+}

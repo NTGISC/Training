@@ -1,0 +1,38 @@
+var reviews = [];
+var reviewTable = FeatureSetByRelationshipName($feature, "Stl_Review");
+if (!IsEmpty(reviewTable)) {
+    for (var r in reviewTable) {
+        var dateStr = IIF(!IsEmpty(r.ReviewDate), Text(Date(r.ReviewDate), 'MMM D, YYYY'), "");
+        var stars = "";
+        if (!IsEmpty(r.Rating)) {
+            for (var i = 0; i < r.Rating; i++) { stars += "★"; }
+            for (var j = r.Rating; j < 5; j++) { stars += "☆"; }
+        }
+        var reviewText = IIF(IsEmpty(r.Review), "No review text.", r.Review);
+        Push(reviews, {
+            'date': dateStr,
+            'stars': stars,
+            'text': reviewText
+        });
+    }
+}
+
+var mediaInfos = [];
+var reviewCount = Count(reviews);
+for (var i = 0; i < reviewCount; i++) {
+    var r = reviews[i];
+    Push(mediaInfos, {
+        'type': "image",
+        'caption': r['date'] + " " + r['stars'] + "<br>" + r['text'],
+        'altText': "Review: " + r['text'],
+        'value': {
+            'sourceURL': "https://dummyimage.com/120x75/ffffff&text=Reviews"
+        }
+    });
+}
+
+return {
+    'type': "media",
+    'title': "User Reviews:",
+    'mediaInfos': mediaInfos
+};

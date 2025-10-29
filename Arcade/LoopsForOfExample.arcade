@@ -1,0 +1,6 @@
+var fruits = ["apple", "banana", "cherry"]
+var output = ""
+for (var fruit of fruits) {
+  output += fruit + " "
+}
+return Trim(output) // Output: "apple banana cherry"

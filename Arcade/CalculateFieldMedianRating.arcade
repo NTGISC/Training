@@ -1,0 +1,27 @@
+// Accepts either an array or a FeatureSet + field name
+function median(arrOrFS, fieldName) {
+    var values = [];
+    // If arrOrFS is a FeatureSet, get values from the field
+    if (TypeOf(arrOrFS) == "FeatureSet" && !IsEmpty(fieldName)) {
+        for (var f in arrOrFS) {
+            if (!IsEmpty(f[fieldName])) {
+                Push(values, f[fieldName]);
+            }
+        }
+    } else {
+        values = arrOrFS;
+    }
+    var sorted = Sort(values);
+    var len = Count(sorted);
+    if (len == 0) { return null; }
+    var mid = Floor(len / 2);
+    if (len % 2 == 1) {
+        return sorted[mid];
+    } else {
+        return (sorted[mid - 1] + sorted[mid]) / 2;
+    }
+}
+var reviewTable = FeatureSetByRelationshipName($feature, "Stl_Review");
+if (!IsEmpty(reviewTable)) {
+    return median(reviewTable, "Rating")
+}

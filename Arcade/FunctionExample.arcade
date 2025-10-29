@@ -1,0 +1,6 @@
+function add(a, b) {
+  return a + b
+}
+
+var sum = add(5, 7) // 12
+return sum

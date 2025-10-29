@@ -1,0 +1,3 @@
+var myarray = ['orange', 'purple']
+var splicedarray = Splice(myarray, 1, 2, 'red') // ["orange", "purple", 1, 2, "red']
+return splicedarray

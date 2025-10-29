@@ -1,0 +1,16 @@
+var a = 5
+var b = 10
+var result_or = (a > 3) || (b < 5)  // true || false = true
+
+// Example 2: Logical AND (&&)
+var c = 7
+var d = 8
+var result_and = (c > 6) && (d == 8)  // true && true = true
+
+// Example 3: Logical NOT (!)
+var e = 12
+var result_not = !(e < 10)  // !(false) = true
+
+return "result_or = " + Text(result_or) + "\n" +
+"result_and = " + Text(result_and) + "\n" +
+"result_not = " + Text(result_not)

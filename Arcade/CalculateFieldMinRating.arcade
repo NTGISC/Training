@@ -1,0 +1,4 @@
+var reviewTable = FeatureSetByRelationshipName($feature, "Stl_Review");
+if (!IsEmpty(reviewTable)) {
+    return min(reviewTable, "Rating")
+}

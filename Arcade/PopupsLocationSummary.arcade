@@ -1,0 +1,16 @@
+var name = $feature.LocationName;
+var rating = $feature.Rating;
+var address = $feature.Address;
+var website = $feature.Website;
+var websiteDisplay = IIF(!IsEmpty(website), "<a href='" + website + "' target='_blank'>Website</a>", "—");
+
+var out = "";
+out += "<b>" + name + "</b><br>";
+out += "<b>Rating:</b> " + IIF(!IsEmpty(rating), Round(rating, 1) + " / 5", "—") + "<br>";
+out += "<b>Address:</b> " + IIF(!IsEmpty(address), address, "—") + "<br>";
+out += websiteDisplay;
+
+return { 
+    type : 'text', 
+    text : out
+}

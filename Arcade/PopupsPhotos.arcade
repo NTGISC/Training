@@ -1,0 +1,16 @@
+var out = "";
+var photoTable = FeatureSetByRelationshipName($feature, "Stl_Photo");
+var photoNum = 1;
+if (!IsEmpty(photoTable)) {
+    out += "<b>Photos:</b><br>";
+    for (var p in photoTable) {
+        if (!IsEmpty(p.PhotoUrl)) {
+            out += "<a href='" + p.PhotoUrl + "' target='_blank'>Photo " + photoNum + "</a>&nbsp;&nbsp;";
+            photoNum += 1;
+        }
+    }
+}
+return { 
+    type : 'text', 
+    text : out
+}

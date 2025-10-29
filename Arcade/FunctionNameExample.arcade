@@ -1,0 +1,14 @@
+function getFullName(person) {
+  return person["first"] + " " + person["last"]
+}
+
+var people = [
+  {"first": "Ada", "last": "Lovelace"},
+  {"first": "Alan", "last": "Turing"}
+]
+
+var names = []
+for (var i = 0; i < Count(people); i++) {
+  Push(names, getFullName(people[i]))
+}
+return names // ["Ada Lovelace", "Alan Turing"]
